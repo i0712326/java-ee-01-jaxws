@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://service.web.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://service.web.com" xmlns:intf="http://service.web.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://service.web.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="sample">
+    <complexType>
+     <sequence>
+      <element name="param" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="sampleResponse">
+    <complexType>
+     <sequence>
+      <element name="sampleReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="sampleResponse">
+
+      <wsdl:part element="impl:sampleResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="sampleRequest">
+
+      <wsdl:part element="impl:sample" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="SampleImp">
+
+      <wsdl:operation name="sample">
+
+         <wsdl:input message="impl:sampleRequest" name="sampleRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:sampleResponse" name="sampleResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="SampleImpSoapBinding" type="impl:SampleImp">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="sample">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="sampleRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="sampleResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="SampleImpService">
+
+      <wsdl:port binding="impl:SampleImpSoapBinding" name="SampleImp">
+
+         <wsdlsoap:address location="http://localhost:8080/java-ee-01-jaxws/services/SampleImp"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
