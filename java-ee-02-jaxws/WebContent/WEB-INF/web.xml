@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>java-ee-02-jaxws</display-name>
+  <security-constraint>  
+    <web-resource-collection>  
+      <web-resource-name>webservice auth</web-resource-name>  
+      <url-pattern>/*</url-pattern> 
+     <!-- <http-method>POST</http-method> -->
+    </web-resource-collection>  
+    <auth-constraint>  
+      <role-name>webservice</role-name>  
+    </auth-constraint>
+    <user-data-constraint>
+       	<transport-guarantee>CONFIDENTIAL</transport-guarantee>
+    </user-data-constraint>  
+  </security-constraint>  
+  <login-config>  
+    <auth-method>BASIC</auth-method>
+    <realm-name>ApplicationRealm</realm-name>  
+  </login-config>  
+  <security-role>  
+    <role-name>webservice</role-name>  
+  </security-role>
+</web-app>

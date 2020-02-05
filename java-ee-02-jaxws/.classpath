@@ -13,7 +13,7 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/java-ee-01-ejb"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/java-ee-01-jpa"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/java-ee-01-ejb"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
